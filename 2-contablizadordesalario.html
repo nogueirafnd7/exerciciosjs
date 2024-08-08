@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contablilizador de salário</title>
+</head>
+
+<body>
+    <script>
+
+        var qtdhoras, qtdias, qtdhorastotal, qtdganhophora, salario;
+
+        qtdias = prompt("Digite a quantidade de dias trabalhados");
+        qtdhoras = prompt("Digite a quantidade de horas que você trabalha por dia");
+        qtdganhophora = prompt("Digite quanto você ganha por hora");
+        horaextra = prompt("Você fez alguma hora extra? Se sim digite o valor, se não, digite 0");
+        horadescont = prompt("Você teve horas de salário descontadas? Se sim coloque a quantidade, se não digite 0")
+
+        if (horaextra > 0 && horadescont > 0) {
+            qtdhorastotal = (qtdhoras + (horaextra-horadescont)) * qtdias;
+        }
+        else if (horaextra > 0 && horadescont == 0) {
+            qtdhorastotal = (qtdhoras + horaextra) * qtdias;
+        }
+        else if (horaextra == 0 && horadescont > 0) {
+            qtdhorastotal = (qtdhoras - horadescont) * qtdias;
+        }
+        else if (horaextra == 0 && horadescont == 0) {
+            qtdhorastotal = qtdhoras * qtdias;
+        }
+
+        salario = qtdhorastotal * qtdganhophora;
+        alert("O salário total é: R$" + salario.toFixed(2));
+
+    </script>
+</body>
+
+</html>

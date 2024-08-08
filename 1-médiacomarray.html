@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média Com Array</title>
+</head>
+
+<body>
+    <script>
+
+        const notas = [];
+        var qtd, soma = 0;
+       
+        //looping dos números
+        while (true) {
+            let valor = prompt("Digite um valor entre 0 a 10 (ou digite 'sair' para encerrar):");
+
+            if (valor > 0 && valor <= 10) {
+                notas.push(Number(valor));
+
+            } else if (valor.toLowerCase() === 'sair') {
+                break;
+
+            } else {
+                alert("O resultado não será computado");
+            }
+        }
+        
+        //contagem dos números
+        qtd = notas.length;
+
+        //soma
+        for (var i = 0; i < qtd; i++) {
+            soma += notas[i];
+        }
+
+        const media = soma / qtd;
+
+        alert("A média é : " + media.toFixed(1));
+
+    </script>
+</body>
+
+</html>
